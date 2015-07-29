@@ -1,7 +1,7 @@
 #How to use the Rsync Tool | 如何使用数据同步工具
 You can use Rsync to synchronize data between servers. The highest speed can reach 30M/s, really very magical! Please check the doc document in the warehouse in detail. | 你可以使用rsync进行服务器间的数据同步。最高速度可以达到30M/s，真的很神奇！详细的操作步骤请查看仓库中的doc文档。
 
-##Rsync.bat runs on the server, the backup server.  | rsync.bat 运行在获取数据的服务器上，即备份服务器。
+####Rsync.bat runs on the server, the backup server.  | rsync.bat 运行在获取数据的服务器上，即备份服务器。
 ```HTML
 @echo off
 echo.
@@ -18,7 +18,7 @@ echo.
 
 ```
 
-##Rsyncd.conf is the configuration file in the data source server, please see the following code in detail. | rsyncd.conf 是在数据源服务器上的配置文件，详细配置请看下面代码。
+####Rsyncd.conf is the configuration file in the data source server, please see the following code in detail. | rsyncd.conf 是在数据源服务器上的配置文件，详细配置请看下面代码。
 
 ```HTML
 use chroot = false
