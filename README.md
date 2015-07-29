@@ -1,24 +1,24 @@
-#How to use the Rsync Tool
-you kan rsync the date width many server computer. please read the doc file.
+#How to use the Rsync Tool | å¦‚ä½•ä½¿ç”¨æ•°æ®åŒæ­¥å·¥å…·
+You can use Rsync to synchronize data between servers. The highest speed can reach 30M/s, really very magical! Please check the doc document in the warehouse in detail. | ä½ å¯ä»¥ä½¿ç”¨rsyncè¿›è¡ŒæœåŠ¡å™¨é—´çš„æ•°æ®åŒæ­¥ã€‚æœ€é«˜é€Ÿåº¦å¯ä»¥è¾¾åˆ°30M/sï¼ŒçœŸçš„å¾ˆç¥å¥‡ï¼è¯¦ç»†çš„æ“ä½œæ­¥éª¤è¯·æŸ¥çœ‹ä»“åº“ä¸­çš„docæ–‡æ¡£ã€‚
 
-##The rsync.bat run the want to have data PC.
+##Rsync.bat runs on the server, the backup server.  | rsync.bat è¿è¡Œåœ¨è·å–æ•°æ®çš„æœåŠ¡å™¨ä¸Šï¼Œå³å¤‡ä»½æœåŠ¡å™¨ã€‚
 ```HTML
 @echo off
 echo.
-echo ¿ªÊ¼Í¬²½Êı¾İ£¬Joo ÇëÉÔµÈ...
+echo å¼€å§‹åŒæ­¥æ•°æ®ï¼ŒJoo è¯·ç¨ç­‰...
 echo.
 cd C:\Program Files (x86)\cwRsync\bin
 rsync -vzrtopg --port=873 --progress --delete Administrator@10.232.74.255::s3 /cygdrive/d/wwwroots  
-            // d/wwwroots   Îª´æÊı¾İÎ»ÖÃdÅÌwwwrootsÎÄ¼ş¼Ğ
-            //s3 Îª¿Í»§¶ËÉÏÅäÖÃµÄconfigÎÄ¼şÍ¬²½Ãû³Æ¡£
-            //Administrator@10.232.74.255 Îª·şÎñ¶ËµÄÓÃ»§ÃûºÍIpµØÖ·
+            // d/wwwroots   ä¸ºå­˜æ•°æ®ä½ç½®dç›˜wwwrootsæ–‡ä»¶å¤¹
+            //s3 ä¸ºå®¢æˆ·ç«¯ä¸Šé…ç½®çš„configæ–‡ä»¶åŒæ­¥åç§°ã€‚
+            //Administrator@10.232.74.255 ä¸ºæœåŠ¡ç«¯çš„ç”¨æˆ·åå’ŒIpåœ°å€
 echo.
-echo Êı¾İÍ¬²½Íê³É£¬¹§Ï²Joo!
+echo æ•°æ®åŒæ­¥å®Œæˆï¼Œæ­å–œJoo!
 echo.
 
 ```
 
-##The rsyncd.conf run in the data PC
+##Rsyncd.conf is the configuration file in the data source server, please see the following code in detail. | rsyncd.conf æ˜¯åœ¨æ•°æ®æºæœåŠ¡å™¨ä¸Šçš„é…ç½®æ–‡ä»¶ï¼Œè¯¦ç»†é…ç½®è¯·çœ‹ä¸‹é¢ä»£ç ã€‚
 
 ```HTML
 use chroot = false
@@ -35,7 +35,7 @@ port = 873
 # Remember cygwin naming conventions : c:\work becomes /cygwin/c/work
 #
 [s2]
-path = /cygdrive/d/wwwroot    //Êı¾İÔ´£¬¼´Òª°ÑÕâÀïµÄÊı¾İÍ¬²½¸øÆäËü·şÎñÆ÷¡£    
+path = /cygdrive/d/wwwroot    //æ•°æ®æºï¼Œå³è¦æŠŠè¿™é‡Œçš„æ•°æ®åŒæ­¥ç»™å…¶å®ƒæœåŠ¡å™¨ã€‚    
 read only = false
 transfer logging = yes
 lock file = rsyncd.lock
