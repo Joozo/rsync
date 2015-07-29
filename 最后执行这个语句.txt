@@ -1,0 +1,7 @@
+cd C:\Program Files\cwRsync\bin
+
+rsync -vzrtopg --port=873 --progress --delete administrator@192.168.1.119::t_www.siteserver.cn /cygdrive/f/sync
+
+
+rsync -vzrtopg --port=873 --progress /cygdrive/d/data/ administrator@10.0.53.202::t_data <c:\password.txt
+rsync -vzrtopg --port=873 --progress administrator@10.0.53.202::t_data /cygdrive/d/data <c:\password.txt
